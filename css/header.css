@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+#site-navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#site-navigation ul li {
+    padding: 1em;
+}
+
+#site-navigation ul li a {
+    font-family: 'spacemono';
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+}

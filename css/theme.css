@@ -1,0 +1,21 @@
+
+
+/* CHARGEMENT DES POLICES EN LOCAL */
+@font-face {
+    font-family: 'spacemono';
+    src: url('../fonts/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'spacemono-bolditalic';
+    src: url('../fonts/SpaceMono-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+#page {
+    max-width: 1440px;
+    margin: auto;
+}
