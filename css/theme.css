@@ -14,7 +14,28 @@
     font-weight: 700;
     font-style: italic;
 }
+@font-face {
+    font-family: 'poppins-medium';
+    src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
 
+/* VARIABLES COULEURS et FONT SIZE */
+:root {
+    --primary-color: #E00000;
+    --primary-color-clair: #FE5858;
+    --primary-color-x-clair: #FFD6D6;
+    --secondary-color: #000;
+    --secondary-color-clair: #313144;
+    --gris-fonce: #C4C4C4;
+    --gris-medium: #D8D8D8;
+    --gris-light: #E5E5E5;
+
+    --size-base: 12px;
+}
+
+/* ELEMENTS PAGE ET SINGLE */
 #page {
     max-width: 1440px;
     margin: auto;
