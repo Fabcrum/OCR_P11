@@ -1,10 +1,6 @@
 <?php
 /**
  * Template part for displaying modale contact
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @package WordPress
- * @subpackage OCR_P11
- * @since OCR_P11 1.0
  */
 ?>
 

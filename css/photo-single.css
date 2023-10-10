@@ -1,0 +1,113 @@
+/* === PHOTO SINGLE === 
+    - Infos et image
+    - Call to action
+    - Apparentées
+*/
+
+/* - Infos et image */
+
+.photo-single {
+    max-width: 1148px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+/* Infos */
+
+.photo-info {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    max-width: 50vw;
+}
+
+.photo-info h2 {
+    line-height: 58px;
+    max-width: 420px;
+}
+
+.photo-info ul {
+    list-style: none;
+    padding-left:0;
+    max-width: 420px;
+}
+
+.photo-info li {
+    font-family: var(--primary-f-family);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding-bottom: 21px;
+}
+
+.photo-info li:last-of-type {
+    padding-bottom: 31px;
+}
+
+/* Image */
+
+.photo-image {
+    width: 50%;
+    height: 100vh;
+  /*  display: flex;
+    justify-content: end; */
+    position: relative;
+}
+
+.photo-image img {
+    width: auto;
+    max-height: calc(100vh - 118px);
+    max-width: 50vw;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.photo-single__footer {
+    max-width: 1148px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:1px solid black;
+    height: 118px;
+}
+
+/* - Call to action */
+
+.photo-single__footer__cta {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.photo-single__footer__cta p {
+    font-family: var(--tertiary-f-family);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;    
+}
+
+.photo-single__footer__cta .btn-contact {
+    width: 272px;
+    height: 50px;
+}
+
+.photo-single__footer__cta p a {
+    font-family: var(--primary-f-family);
+    font-weight: 400;
+    font-size:  var(--size-base);
+    text-decoration: none;
+}
+
+/* Apparentées */
+
+.photo-single__apparentees p {
+    font-family: var(--primary-f-family);
+    font-weight: 400;
+    font-size:  18px;
+    text-transform: uppercase;
+}

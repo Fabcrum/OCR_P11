@@ -1,4 +1,4 @@
-
+/* === THEME === */
 
 /* CHARGEMENT DES POLICES EN LOCAL */
 @font-face {
@@ -21,7 +21,14 @@
     font-style: normal;
 }
 
-/* VARIABLES COULEURS et FONT SIZE */
+@font-face {
+    font-family: 'poppins-light';
+    src: url('../fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* VARIABLES COULEURS et FONT */
 :root {
     --primary-color: #E00000;
     --primary-color-clair: #FE5858;
@@ -33,10 +40,64 @@
     --gris-light: #E5E5E5;
 
     --size-base: 12px;
+
+    --primary-f-family: "spacemono";
+    --secondary-f-family: "poppin-medium";
+    --tertiary-f-family: "poppins-light";
+
+}
+
+/* TITRES ET TEXTES */
+h1 {
+    font-family: 'spacemono-bolditalic';
+    font-weight:700;
+    font-size:96px;
+    font-style: italic;
+    text-transform:uppercase;
+}
+
+h2 {
+    font-family: var(--primary-f-family);
+    font-weight:400;
+    font-size: 66px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: var(--primary-f-family);
+    font-weight:400;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+}
+
+/* BOUTONS */
+
+#form input[type='submit'], .btn-contact {
+    border: 0px;
+    background-color: var(--gris-medium);
+    font-family: var(--primary-f-family);
+    font-size:  var(--size-base);
+    padding: 8px 15px;
+    border-radius: 2px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#form input[type='submit']:hover, .btn-contact:hover {
+    background-color: black;
+    color: white;
+    font-weight: 700;
 }
 
 /* ELEMENTS PAGE ET SINGLE */
 #page {
-    max-width: 1440px;
+    max-width: 1148px;
     margin: auto;
 }

@@ -1,11 +1,6 @@
 <?php
 /**
- * The header.
- * This is the template that displays all of the <head> section and everything up until main.
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- * @package WordPress
- * @subpackage OCR_P11
- * @since OCR_P11 1.0
+ * The template for displaying the header
  */
 
 ?>
@@ -28,17 +23,18 @@
 		<!-- AJOUT MENU -->
 		<nav id="site-navigation">
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location'  => 'header-menu-ajout',
-					'menu_class'      => '',
-					'container_class' => '',
-					'items_wrap'      => '<ul id="top-menu">%3$s</ul>',
-					'fallback_cb'     => false,
-				)
-			);
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'header-menu-ajout',
+						'menu_class'      => '',
+						'container_class' => '',
+						'items_wrap'      => '<ul id="top-menu">%3$s</ul>',
+						'fallback_cb'     => false,
+					)
+				);
 			?>
 		</nav><!-- #site-navigation -->
+		
 	</header>
 
     <div id="content">

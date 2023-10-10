@@ -1,3 +1,5 @@
+/* === MODALE CONTACT === */
+
 #modale-contact {
     position:fixed;
     top: 0;
@@ -15,6 +17,7 @@
     opacity: .7;
     top: 0;
     left: 0;
+    animation: obtur .3s 0s both ease-out;
 }
 
 #modale-contact #form {
@@ -29,7 +32,16 @@
     align-items: self-end;
     justify-content: center;
     background: url("../assets/contact-header.svg") no-repeat top center white;
+    animation: obtur .15s .15s both ease-out;
 }
+
+@keyframes obtur { 
+    0% { scale: 0 }
+    25% { scale: 1 }
+    50% { scale: .5 }
+    100% { scale: 1 }
+}
+
 
 #form label {
     text-transform: uppercase;
@@ -49,16 +61,6 @@
 
 #form textarea {
     height: 210px;
-}
-
-#form input[type='submit'] {
-    border: 0px;
-    background-color: var(--gris-medium);
-    font-family: "spacemono";
-    font-size:  var(--size-base);
-    padding: 8px 15px;
-    display: block;
-    margin: auto;
 }
 
 .display-none {

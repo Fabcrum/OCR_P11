@@ -1,3 +1,5 @@
+/* === HEADER === */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -25,4 +27,8 @@ header {
     text-decoration: none;
     color: #000;
     text-transform: uppercase;
+}
+
+#site-navigation ul li a:hover {
+    font-weight: 700;
 }

@@ -1,7 +1,6 @@
+/* === PAGE === */
+
 .hero h1 {
-    font-family: 'spacemono-bolditalic';
-    text-transform:uppercase;
-    font-size:96px;
     color:rgba(255, 255, 255, 0)! important;
     -webkit-text-stroke: 2px #fff;
     z-index: 1;

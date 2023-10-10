@@ -1,0 +1,28 @@
+/* === PAGINATION === 
+    - Fleches prev et next
+    - 
+*/
+
+/* - Fleches prev et next */
+
+.photo-single__navigation {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo-single__navigation__prev a {
+    background: url("../assets/prev.svg") no-repeat center left;
+}
+
+.photo-single__navigation__next a {
+    background: url("../assets/next.svg") no-repeat center right;
+}
+
+.photo-single__navigation__prev a, .photo-single__navigation__next a {
+    width: 25px;
+    height: 25px;
+    color:#fff;
+    text-decoration: none;
+    display: block;
+}

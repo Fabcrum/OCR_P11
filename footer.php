@@ -1,17 +1,12 @@
 <?php
 /**
  * The template for displaying the footer
- * Contains the closing of the #content div and all content after.
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- * @package WordPress
- * @subpackage OCR_P11
- * @since OCR_P11 1.0
  */
 
 ?>
-                <?php get_template_part( 'template-parts/modale-contact' ); ?>
+            <?php get_template_part( 'template-parts/modale-contact' ); ?>
 
-			</main><!-- #main -->
+		</main><!-- #main -->
 	</div><!-- #content -->
 
 	<footer>
