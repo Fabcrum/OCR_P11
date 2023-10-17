@@ -5,21 +5,63 @@
 
 /* - Fleches prev et next */
 
-.photo-single__navigation {
+.pagination-photo {
+    width: 81px;
+    height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.pagination-photo__container {
+    width: 81px;
+    height: 71px;
+    position: relative;
+}
+
+.pagination-photo__img-prev, .pagination-photo__img-next {
+    width: 81px;
+    height: 71px;
+    overflow: hidden;
+    padding-top: 5px;
+    position:absolute;
+    opacity: 0;
+    transition-duration: .7s;
+}
+
+.pagination-photo__img-prev img, .pagination-photo__img-next img  {
+    object-fit: cover;
+    object-position: center;
+    width: 81px;
+    max-height: 80px;
+    height: auto;
+    opacity: 1;
+}
+
+.pagination-photo__fleches {
     width: 80px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 5px;
 }
 
-.photo-single__navigation__prev a {
+.pagination-photo__prev a {
     background: url("../assets/prev.svg") no-repeat center left;
 }
 
-.photo-single__navigation__next a {
+.pagination-photo__prev a:hover + .pagination-photo__img-previous img {
+    opacity: 0;
+}
+
+.pagination-photo__next a {
     background: url("../assets/next.svg") no-repeat center right;
 }
 
-.photo-single__navigation__prev a, .photo-single__navigation__next a {
+.pagination-photo__next a:hover + .pagination-photo__img-next img {
+    opacity: 0;
+}
+
+.pagination-photo__prev a, .pagination-photo__next a {
     width: 25px;
     height: 25px;
     color:#fff;

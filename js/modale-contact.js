@@ -1,12 +1,13 @@
 // # MODALE CONTACT  ================ #
 // - Récupération des éléments dans le DOM
-// - Ouverture click lien menu
-// - Click sur fond modale ou bouton envoyer liens
+// - Fonction ouverture modale
+// - AddEventListener d'ouverture
+// - Fermeture modale
 
 // Récupération des éléments dans le DOM
 
 const lienContact = document.querySelector(".lien-contact")
-const boutonContact = document.querySelector(".bouton-contact")
+// const boutonContact = document.getElementById("bouton-contact")
 const modaleContact = document.getElementById("modale-contact")
 const modaleFond = document.getElementById("fond")
 const modaleForm = document.getElementById("form")
@@ -18,16 +19,24 @@ function ouvertureModale() {
     modaleForm.classList.remove("display-none")
 }
 
-// addEventListener d'ouverture
-
+// AddEventListener d'ouverture
 lienContact.addEventListener("click", () => { 
     ouvertureModale()
 });
 
-boutonContact.addEventListener("click", () => { 
-    ouvertureModale()
-});
+// Remplissage champ ref
+const refPhoto = document.querySelector(".ref-photo")
+const valRefPhoto = refPhoto.innerHTML
+console.log(valRefPhoto)
 
+// Affiche : champ-ref-photo
+$(document).ready(function() {
+//  boutonContact.addEventListener("click", () => { 
+    $('#bouton-contact').click(function() {
+        ouvertureModale()
+        $('#champ-ref-photo').val(valRefPhoto)
+    })
+})
 
 // Fermeture modale
 modaleFond.addEventListener("click", () => {
@@ -35,4 +44,3 @@ modaleFond.addEventListener("click", () => {
     modaleFond.classList.add("display-none")
     modaleForm.classList.add("display-none")
 })
-

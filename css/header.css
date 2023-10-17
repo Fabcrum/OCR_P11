@@ -32,3 +32,7 @@ header {
 #site-navigation ul li a:hover {
     font-weight: 700;
 }
+
+#site-navigation li.lien-contact {
+    cursor:pointer;
+}

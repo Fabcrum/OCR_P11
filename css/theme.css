@@ -42,7 +42,7 @@
     --size-base: 12px;
 
     --primary-f-family: "spacemono";
-    --secondary-f-family: "poppin-medium";
+    --secondary-f-family: "poppins-medium";
     --tertiary-f-family: "poppins-light";
 
 }
@@ -77,11 +77,12 @@ p {
 
 /* BOUTONS */
 
-#form input[type='submit'], .btn-contact {
+#form input[type='submit'], .btn-base {
     border: 0px;
     background-color: var(--gris-medium);
     font-family: var(--primary-f-family);
     font-size:  var(--size-base);
+    font-weight: 400;
     padding: 8px 15px;
     border-radius: 2px;
     display: block;
@@ -90,14 +91,24 @@ p {
     transition: 0.3s;
 }
 
-#form input[type='submit']:hover, .btn-contact:hover {
+a {    text-decoration: none; }
+
+#form input[type='submit']:hover, .btn-base:hover {
     background-color: black;
     color: white;
     font-weight: 700;
 }
 
-/* ELEMENTS PAGE ET SINGLE */
+/* ELEMENTS PAGE SINGLE ET JS */
 #page {
     max-width: 1148px;
     margin: auto;
 }
+
+.espace {
+    height:30px;
+}
+
+.display-none {
+    display: none!important;
+ }

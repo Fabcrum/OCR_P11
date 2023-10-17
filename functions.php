@@ -13,10 +13,14 @@ function theme_enqueue_styles()
 	wp_enqueue_style('footer-style', get_stylesheet_directory_uri() . '/css/footer.css', array(), filemtime(get_stylesheet_directory() . '/css/footer.css'));
 	wp_enqueue_style('page-style', get_stylesheet_directory_uri() . '/css/page.css', array(), filemtime(get_stylesheet_directory() . '/css/page.css'));
 	wp_enqueue_style('single-style', get_stylesheet_directory_uri() . '/css/single.css', array(), filemtime(get_stylesheet_directory() . '/css/single.css'));
-	wp_enqueue_style('photo-single-style', get_stylesheet_directory_uri() . '/css/photo-single.css', array(), filemtime(get_stylesheet_directory() . '/css/photo-single.css'));
+	wp_enqueue_style('single-cpt-photo-style', get_stylesheet_directory_uri() . '/css/single-cpt-photo.css', array(), filemtime(get_stylesheet_directory() . '/css/single-cpt-photo.css'));
     wp_enqueue_style('modale-contact-style', get_stylesheet_directory_uri() . '/css/modale-contact.css', array(), filemtime(get_stylesheet_directory() . '/css/modale-contact.css'));
+    wp_enqueue_style('lightbox-style', get_stylesheet_directory_uri() . '/css/lightbox.css', array(), filemtime(get_stylesheet_directory() . '/css/lightbox.css'));
     wp_enqueue_style('pagination-photo-style', get_stylesheet_directory_uri() . '/css/pagination-photo.css', array(), filemtime(get_stylesheet_directory() . '/css/pagination-photo.css'));
+    wp_enqueue_style('appel-vignettes-style', get_stylesheet_directory_uri() . '/css/appel-vignettes.css', array(), filemtime(get_stylesheet_directory() . '/css/appel-vignettes.css'));
     wp_enqueue_script('script-modale-contact', get_stylesheet_directory_uri() . '/js/modale-contact.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+    wp_enqueue_script('script-lightbox', get_stylesheet_directory_uri() . '/js/lightbox.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+    wp_enqueue_script('script-pagination-photo', get_stylesheet_directory_uri() . '/js/pagination-photo.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
 }
 
 // Ajout de la fonctionnalité menu 
