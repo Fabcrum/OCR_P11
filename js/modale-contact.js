@@ -24,10 +24,19 @@ lienContact.addEventListener("click", () => {
     ouvertureModale()
 });
 
+// Fermeture modale
+modaleFond.addEventListener("click", () => {
+    modaleContact.classList.add("display-none")
+    modaleFond.classList.add("display-none")
+    modaleForm.classList.add("display-none")
+})
+
 // Remplissage champ ref
-const refPhoto = document.querySelector(".ref-photo")
+let refPhoto = document.querySelector(".ref-photo")
+// if (!refPhoto == null) {
 const valRefPhoto = refPhoto.innerHTML
 console.log(valRefPhoto)
+// }
 
 // Affiche : champ-ref-photo
 $(document).ready(function() {
@@ -38,9 +47,3 @@ $(document).ready(function() {
     })
 })
 
-// Fermeture modale
-modaleFond.addEventListener("click", () => {
-    modaleContact.classList.add("display-none")
-    modaleFond.classList.add("display-none")
-    modaleForm.classList.add("display-none")
-})

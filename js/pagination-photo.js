@@ -12,6 +12,7 @@ const flecheNext = document.querySelector(".pagination-photo__next")
 const flechePrev = document.querySelector(".pagination-photo__prev")
 
 // AddEventListener de basculement
+
 flecheNext.addEventListener("pointerover", (event) => { 
     imgNext.style.opacity='1'
 });

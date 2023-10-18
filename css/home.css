@@ -1,0 +1,78 @@
+/* === HOME === */
+
+#hero-image {
+    max-width: 1148px;
+    margin:auto;
+    max-height: 80vh;
+    z-index:0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+#hero-image img {
+    object-fit:cover;
+}
+
+#hero-image h1 {
+    color:rgba(255, 255, 255, 0)! important;
+    -webkit-text-stroke: 2px #fff;
+    z-index: 1;
+    position: absolute;
+}
+
+#filtres-photos form {
+    display:flex;
+}
+
+fieldset {
+    border: 0px;
+    display: flex;
+    width: 50%;
+    margin: 0 0 30px;
+    padding:0;
+}
+
+fieldset.categories-formats {
+    justify-content: space-between;
+    margin-right: 1.5%;
+}
+
+fieldset.trier-par {
+    justify-content: end;
+}
+
+select {
+    border: 1.3px solid #B8BBC2;
+    border-radius:8px;
+    width: 260px;
+    height: 42px;
+    padding: 11px 18px 11px 18px;
+    display: flex;
+    font-family: var(--secondary-f-family);
+    text-transform: uppercase;
+    background-color: white;
+    color: var(--secondary-color-clair);
+}
+
+select option {
+    font-family: var(--secondary-f-family), sans-serif;
+    color: var(--secondary-color-clair);
+}
+select option:nth-child(1) {
+    display: none;
+}
+
+fieldset select::before {
+    content:"";
+    border-right: 50px;
+    height: 20px;
+    width: 20px;
+}
+
+#bouton-charger-plus {
+    margin-top: 30px;
+}

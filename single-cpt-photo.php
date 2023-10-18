@@ -47,7 +47,7 @@ get_header(); ?>
     </section>
     <section class="photo-single__apparentees">
       <p>Vous aimerez aussi<p>
-      <div class="photo-single__apparentees__img">
+      <div class="photo-grille">
 
         <!-- Ajout appel-vignettes -->
         <?php

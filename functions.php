@@ -11,7 +11,7 @@ function theme_enqueue_styles()
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
     wp_enqueue_style('header-style', get_stylesheet_directory_uri() . '/css/header.css', array(), filemtime(get_stylesheet_directory() . '/css/header.css'));
 	wp_enqueue_style('footer-style', get_stylesheet_directory_uri() . '/css/footer.css', array(), filemtime(get_stylesheet_directory() . '/css/footer.css'));
-	wp_enqueue_style('page-style', get_stylesheet_directory_uri() . '/css/page.css', array(), filemtime(get_stylesheet_directory() . '/css/page.css'));
+	wp_enqueue_style('home-style', get_stylesheet_directory_uri() . '/css/home.css', array(), filemtime(get_stylesheet_directory() . '/css/home.css'));
 	wp_enqueue_style('single-style', get_stylesheet_directory_uri() . '/css/single.css', array(), filemtime(get_stylesheet_directory() . '/css/single.css'));
 	wp_enqueue_style('single-cpt-photo-style', get_stylesheet_directory_uri() . '/css/single-cpt-photo.css', array(), filemtime(get_stylesheet_directory() . '/css/single-cpt-photo.css'));
     wp_enqueue_style('modale-contact-style', get_stylesheet_directory_uri() . '/css/modale-contact.css', array(), filemtime(get_stylesheet_directory() . '/css/modale-contact.css'));
@@ -37,14 +37,21 @@ add_theme_support( 'post-thumbnails' );
 // Ajout titre du site dans l'en-tête
 add_theme_support( 'title-tag' );
 
-// Retrait préfixes sur les pages d'archives */
-//add_filter( 'get_the_category_prefix', '__return_false' );
-//add_filter( 'get_the_taxonomies_prefix', '__return_false' );
-//add_filter( 'rest_get_url_prefix', '__return_false' );
-
-
 // Retrait espace haut de html pour barre admin 
 function remove_admin_login_header() {
     remove_action('wp_head', '_admin_bar_bump_cb');
 }
 add_action('get_header', 'remove_admin_login_header');
+
+
+/* == OPTIONS == */
+
+/** Chargement d'autres parties functions si nécessaire 
+* include get_template_directory() . '/includes/annexe.php';
+*/
+
+/** Retrait préfixes sur les pages d'archives
+* add_filter( 'get_the_category_prefix', '__return_false' );
+* add_filter( 'get_the_taxonomies_prefix', '__return_false' );
+* add_filter( 'rest_get_url_prefix', '__return_false' );
+*/

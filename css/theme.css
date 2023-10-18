@@ -99,6 +99,11 @@ a {    text-decoration: none; }
     font-weight: 700;
 }
 
+::selection  {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 /* ELEMENTS PAGE SINGLE ET JS */
 #page {
     max-width: 1148px;

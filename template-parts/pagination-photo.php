@@ -14,13 +14,11 @@ $next_post = get_next_post();
         <div class="pagination-photo__img-prev">
             <?php if (!empty( $prev_post )): ?>
                     <?php echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail' ); ?>
-                </a>
             <?php endif; ?>
         </div>
         <div class="pagination-photo__img-next">
             <?php if (!empty( $next_post )): ?>
                     <?php echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' ); ?>
-                </a>
             <?php endif; ?>
         </div>
     </div>

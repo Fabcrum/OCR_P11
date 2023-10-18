@@ -120,3 +120,7 @@
 .photo-single__apparentees .btn-base {
     margin: 40px auto 60px;
 }
+
+.photo-single__apparentees .photo-grille {
+    padding-bottom: calc(0.7% * 12);
+}

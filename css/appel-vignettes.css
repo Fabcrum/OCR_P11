@@ -6,11 +6,11 @@
 
 /* - Infos et image */
 
-.photo-single__apparentees__img {
+.photo-grille {
     display: grid;
-    grid-gap: 1% 2%;
+    grid-gap: 20px 2%;
     grid-auto-columns: 49%;
-    grid-template-areas: "a a"
+    grid-template-areas: "a a";
 }
 
 #vignette {
@@ -90,7 +90,3 @@
     right: 20px;
     Bottom: 10px;
 }
-
-
-
-/* UTILISER TRANSITION ? */
