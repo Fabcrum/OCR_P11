@@ -1,9 +1,4 @@
-/* === PAGINATION === 
-    - Fleches prev et next
-    - 
-*/
-
-/* - Fleches prev et next */
+/* === PAGINATION === */
 
 .pagination-photo {
     width: 81px;
@@ -45,26 +40,23 @@
     padding-bottom: 5px;
 }
 
-.pagination-photo__prev a {
-    background: url("../assets/prev.svg") no-repeat center left;
-}
-
-.pagination-photo__prev a:hover + .pagination-photo__img-previous img {
-    opacity: 0;
-}
-
-.pagination-photo__next a {
-    background: url("../assets/next.svg") no-repeat center right;
-}
-
-.pagination-photo__next a:hover + .pagination-photo__img-next img {
-    opacity: 0;
-}
-
 .pagination-photo__prev a, .pagination-photo__next a {
     width: 25px;
     height: 25px;
     color:#fff;
     text-decoration: none;
     display: block;
+}
+
+.pagination-photo__prev a {
+    background: url("../assets/prev.svg") no-repeat center left;
+}
+
+.pagination-photo__next a {
+    background: url("../assets/next.svg") no-repeat center right;
+}
+
+.pagination-photo__prev a:hover + .pagination-photo__img-previous img,
+.pagination-photo__next a:hover + .pagination-photo__img-next img {
+    opacity: 0;
 }

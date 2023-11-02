@@ -1,4 +1,10 @@
 /* === THEME === */
+/* 
+* CHARGEMENT DES POLICES EN LOCAL
+* VARIABLES COULEURS et FONT
+* TITRES ET TEXTES
+* BOUTONS et FORMULAIRES
+* ELEMENTS COMMUNS PAGE SINGLE ET JS
 
 /* CHARGEMENT DES POLICES EN LOCAL */
 @font-face {
@@ -71,12 +77,11 @@ h3 {
     text-transform: uppercase;
 }
 
-p {
-    font-size: 14px;
-}
+p { font-size: 14px; }
 
-/* BOUTONS */
+a { text-decoration: none; }
 
+/* BOUTONS et FORMULAIRES */
 #form input[type='submit'], .btn-base {
     border: 0px;
     background-color: var(--gris-medium);
@@ -91,8 +96,6 @@ p {
     transition: 0.3s;
 }
 
-a {    text-decoration: none; }
-
 #form input[type='submit']:hover, .btn-base:hover {
     background-color: black;
     color: white;
@@ -104,7 +107,7 @@ a {    text-decoration: none; }
     color: white;
 }
 
-/* ELEMENTS PAGE SINGLE ET JS */
+/* ELEMENTS COMMUNS PAGE SINGLE ET JS */
 #page {
     max-width: 1148px;
     margin: auto;

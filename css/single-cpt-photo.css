@@ -1,10 +1,4 @@
-/* === PHOTO SINGLE === 
-    - Infos et image
-    - Call to action
-    - Apparentées
-*/
-
-/* - Infos et image */
+/* === SINGLE CPT PHOTO === */
 
 .photo-single {
     max-width: 1148px;
@@ -12,8 +6,6 @@
     align-items: end;
     justify-content: space-between;
 }
-
-/* Infos */
 
 .photo-info {
     display: flex;
@@ -46,8 +38,6 @@
 .photo-info li:last-of-type {
     padding-bottom: 31px;
 }
-
-/* Image */
 
 .photo-image {
     width: 50%;
@@ -87,8 +77,6 @@
     height: 118px;
 }
 
-/* - Call to action */
-
 .photo-single__footer__cta {
     width: 50%;
     display: flex;
@@ -108,8 +96,6 @@
     height: 50px;
 }
 
-/* Apparentées */
-
 .photo-single__apparentees p {
     font-family: var(--primary-f-family);
     font-weight: 400;
@@ -122,5 +108,5 @@
 }
 
 .photo-single__apparentees .photo-grille {
-    padding-bottom: calc(0.7% * 12);
+    padding-bottom: 20px;
 }

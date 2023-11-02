@@ -43,23 +43,22 @@
     100% { scale: 1 }
 }
 
-
-#form label {
+#modale-contact #form label {
     text-transform: uppercase;
     font-family:'poppins-medium';
     color: var(--secondary-color-clair);
     background-color:white;
 }
 
-#form input[type='text'], 
-#form input[type='email'],
-#form textarea {
+#modale-contact #form input[type='text'], 
+#modale-contact #form input[type='email'],
+#modale-contact #form textarea {
     border: 1px solid #B8BBC2;
     border-radius:8px;
     height: 40px;
     width: 263px;
 }
 
-#form textarea {
+#modale-contact #form textarea {
     height: 210px;
 }

@@ -1,8 +1,8 @@
 <?php
 /**
 * Template Name: Home
- * The template for displaying home page
- */
+* The template for displaying home page
+*/
 
 get_header();
 
@@ -21,26 +21,46 @@ $heroImage = get_stylesheet_directory_uri() . '/assets/hero/' . rand(1,9).'.webp
 </div>
 
 <div id="filtres-photos">
-    <form method="get" action="[...]"> <!-- [...à remplir...]) -->
-        <fieldset class="categories-formats">
-            <select id="categories" name="categories"> 
-                <option value="">Catégories</option>
-                <option value="concert">Concert</option>
-                <option value="mariage">Mariage</option>
-                <option value="reception">Réception</option>
-                <option value="television">Télévision</option>
+    <form
+        name="filtresAjax"
+        id="filtresAjax"
+        action="<?php echo admin_url( 'admin-ajax.php' ); ?>" 
+        method="post"
+        >
+        <input 
+            type="hidden" 
+            name="nonce" 
+            value="<?php echo wp_create_nonce( 'ajax_filtres' ); ?>"
+        >                 
+        <input
+            type="hidden"
+            name="action"   
+            value="ajax_filtres"
+        >
+        <fieldset class="fieldset-categories-formats">
+
+            <?php $categories = get_terms(array( 'taxonomy' => 'categorie-photos', 'hide_empty' => false ));?>
+            <?php $formats = get_terms(array( 'taxonomy' => 'format-photos', 'hide_empty' => false ));?>
+
+            <select id="selectCategories" name="selectCategories">
+                <option value="Concert">Catégories</option>
+                <?php foreach ($categories as $category) : ?>
+                    <option value="<?php echo esc_html($category->name); ?>"><?php echo esc_html($category->name); ?></option>
+                <?php endforeach; ?>
             </select>
-            <select id="format">
-                <option value="">Formats</option>
-                <option value="paysage">Paysage</option>
-                <option value="portrait">Portrait</option>
+            <select id="selectFormats" name="selectFormats">
+                <option value="Paysage">Formats</option>
+                <?php foreach ($formats as $format) : ?>
+                    <option value="<?php echo esc_html($format->name); ?>"><?php echo esc_html($format->name); ?></option>
+                <?php endforeach; ?>
             </select>
         </fieldset>
-        <fieldset class="trier-par">
-            <select id="trier-par" name="trier-par"> 
-                <option value="">Trier par</option>
-                <option value="anciennes-recentes">Des plus récentes aux plus anciennes</option>
-                <option value="recentes-anciennes">Des plus anciennes aux plus récentes</option>
+
+        <fieldset class="fieldset-trier-par">       
+            <select id="selectTriDate" name="selectTriDate" >
+                <option value="ASC">Trier par</option>
+                <option value="ASC">Des plus récentes aux plus anciennes</option>
+                <option value="DESC">Des plus anciennes aux plus récentes</option>
             </select>
         </fieldset>
     </form>
@@ -49,17 +69,29 @@ $heroImage = get_stylesheet_directory_uri() . '/assets/hero/' . rand(1,9).'.webp
 <div class="photo-grille accueil">
 
     <!-- Ajout appel-vignettes -->
-    <?php $args = array(
+    <?php 
+    $args = array(
         'post_type' => 'cpt-photo',
         'posts_per_page' => 12,
-    ); ?>
-    <!-- l'argument "null" peut être remplacé par le slug d'un template-parts le cas échéant -->
-    <?php get_template_part( 'template-parts/appel-vignettes', null, $args ); ?>
+    );
+    $nombrePhotos = $args['posts_per_page'];
+    ?>
+
+    <?php 
+    get_template_part( 'template-parts/appel-vignettes', null, $args );
+    ?>
     <!-- Fin -->
 
 </div>
 
-<button id="bouton-charger-plus" class="btn-base">Charger plus</button>
+<button
+    id="bouton-charger-plus"
+    class="btn-base"
+    action="<?php echo admin_url( 'admin-ajax.php' ); ?>" 
+    data-nonce="<?php echo wp_create_nonce('charger_plus'); ?>"
+    data-action="charger_plus"
+    data-nombrePhotos="<?php echo $nombrePhotos; ?>"
+    >Charger plus</button>
 
 <?php
 get_footer();

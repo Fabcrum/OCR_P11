@@ -1,13 +1,14 @@
-// # MODALE CONTACT  ================ #
-// - Récupération des éléments dans le DOM
-// - Fonction ouverture modale
-// - AddEventListener d'ouverture
-// - Fermeture modale
+/**
+ *  # MODALE CONTACT  ================ #
+ *  - Récupération des éléments dans le DOM
+ * - Fonction ouverture modale
+ * - AddEventListener d'ouverture
+ * - Fermeture modale
+ * - Chargement code ref.
+ */
 
 // Récupération des éléments dans le DOM
-
 const lienContact = document.querySelector(".lien-contact")
-// const boutonContact = document.getElementById("bouton-contact")
 const modaleContact = document.getElementById("modale-contact")
 const modaleFond = document.getElementById("fond")
 const modaleForm = document.getElementById("form")
@@ -22,7 +23,7 @@ function ouvertureModale() {
 // AddEventListener d'ouverture
 lienContact.addEventListener("click", () => { 
     ouvertureModale()
-});
+})
 
 // Fermeture modale
 modaleFond.addEventListener("click", () => {
@@ -31,19 +32,14 @@ modaleFond.addEventListener("click", () => {
     modaleForm.classList.add("display-none")
 })
 
-// Remplissage champ ref
-let refPhoto = document.querySelector(".ref-photo")
-// if (!refPhoto == null) {
-const valRefPhoto = refPhoto.innerHTML
-console.log(valRefPhoto)
-// }
-
-// Affiche : champ-ref-photo
-$(document).ready(function() {
-//  boutonContact.addEventListener("click", () => { 
-    $('#bouton-contact').click(function() {
-        ouvertureModale()
-        $('#champ-ref-photo').val(valRefPhoto)
+// Chargement code ref.
+if (document.getElementById("bouton-contact") !== null) {
+    let refPhoto = document.querySelector(".ref-photo")
+    const valRefPhoto = refPhoto.innerHTML
+    $(document).ready(function() {
+        $('#bouton-contact').click(function() {
+            ouvertureModale()
+            $('#champ-ref-photo').val(valRefPhoto)
+        })
     })
-})
-
+}

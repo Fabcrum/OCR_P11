@@ -20,8 +20,22 @@ function theme_enqueue_styles()
     wp_enqueue_style('appel-vignettes-style', get_stylesheet_directory_uri() . '/css/appel-vignettes.css', array(), filemtime(get_stylesheet_directory() . '/css/appel-vignettes.css'));
     wp_enqueue_script('script-modale-contact', get_stylesheet_directory_uri() . '/js/modale-contact.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
     wp_enqueue_script('script-lightbox', get_stylesheet_directory_uri() . '/js/lightbox.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
-    wp_enqueue_script('script-pagination-photo', get_stylesheet_directory_uri() . '/js/pagination-photo.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+    // Spécifique page d'accueil 
+    if (is_front_page()) {
+        wp_enqueue_script('script-ajax_filtres', get_stylesheet_directory_uri() . '/js/ajax_filtres.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+        wp_enqueue_script('script-ajax_charger_plus', get_stylesheet_directory_uri() . '/js/ajax_charger_plus.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+    }
+    // Spécifique pages single cpt photo
+    if (is_singular('cpt-photo')) {
+        wp_enqueue_script('script-pagination-photo', get_stylesheet_directory_uri() . '/js/pagination-photo.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+        wp_enqueue_script('script-ajax_toutes_les_photos', get_stylesheet_directory_uri() . '/js/ajax_toutes_les_photos.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+    }
 }
+
+// Ajout des fichiers comprennant les parties AJAX /includes/ajax.php
+include get_template_directory() . '/includes/ajax_filtres.php';
+include get_template_directory() . '/includes/ajax_charger_plus.php';
+include get_template_directory() . '/includes/ajax_toutes_les_photos.php';
 
 // Ajout de la fonctionnalité menu 
 function register_menus()
@@ -34,6 +48,15 @@ add_action( 'init', 'register_menus' );
 // Ajout prise en charge images mises en avant
 add_theme_support( 'post-thumbnails' );
 
+// Ajout prise en charge images mises en avant
+add_filter( 'body_class', 'custom_class', 10, 1 );
+function custom_class( $classes ) {
+	if ( is_page_template( 'single-cpt-photo.php' ) ) {
+        $classes[] = 'single-cpt-photo';
+    }
+	return $classes;
+}
+
 // Ajout titre du site dans l'en-tête
 add_theme_support( 'title-tag' );
 
@@ -42,16 +65,3 @@ function remove_admin_login_header() {
     remove_action('wp_head', '_admin_bar_bump_cb');
 }
 add_action('get_header', 'remove_admin_login_header');
-
-
-/* == OPTIONS == */
-
-/** Chargement d'autres parties functions si nécessaire 
-* include get_template_directory() . '/includes/annexe.php';
-*/
-
-/** Retrait préfixes sur les pages d'archives
-* add_filter( 'get_the_category_prefix', '__return_false' );
-* add_filter( 'get_the_taxonomies_prefix', '__return_false' );
-* add_filter( 'rest_get_url_prefix', '__return_false' );
-*/
