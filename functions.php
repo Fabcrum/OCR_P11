@@ -7,6 +7,18 @@
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 function theme_enqueue_styles()
 {
+    // Spécifique page d'accueil 
+    if (is_front_page()) {
+        wp_enqueue_script('script-ajax_filtres', get_stylesheet_directory_uri() . '/js/ajax_filtres.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+        wp_enqueue_script('script-ajax_charger_plus', get_stylesheet_directory_uri() . '/js/ajax_charger_plus.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+        wp_enqueue_script('script-select2', get_stylesheet_directory_uri() . '/js/select2.min.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+        wp_enqueue_style('select2-style', get_stylesheet_directory_uri() . '/css/select2.min.css', array(), filemtime(get_stylesheet_directory() . '/css/select2.min.css'));
+    }
+    // Spécifique pages single cpt photo
+    if (is_singular('cpt-photo')) {
+        wp_enqueue_script('script-pagination-photo', get_stylesheet_directory_uri() . '/js/pagination-photo.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+        wp_enqueue_script('script-ajax_toutes_les_photos', get_stylesheet_directory_uri() . '/js/ajax_toutes_les_photos.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
+    }
 	wp_enqueue_style('OCR_P11-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
     wp_enqueue_style('header-style', get_stylesheet_directory_uri() . '/css/header.css', array(), filemtime(get_stylesheet_directory() . '/css/header.css'));
@@ -18,18 +30,9 @@ function theme_enqueue_styles()
     wp_enqueue_style('lightbox-style', get_stylesheet_directory_uri() . '/css/lightbox.css', array(), filemtime(get_stylesheet_directory() . '/css/lightbox.css'));
     wp_enqueue_style('pagination-photo-style', get_stylesheet_directory_uri() . '/css/pagination-photo.css', array(), filemtime(get_stylesheet_directory() . '/css/pagination-photo.css'));
     wp_enqueue_style('appel-vignettes-style', get_stylesheet_directory_uri() . '/css/appel-vignettes.css', array(), filemtime(get_stylesheet_directory() . '/css/appel-vignettes.css'));
+    wp_enqueue_script('script-menu-mobile', get_stylesheet_directory_uri() . '/js/menu-mobile.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
     wp_enqueue_script('script-modale-contact', get_stylesheet_directory_uri() . '/js/modale-contact.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
     wp_enqueue_script('script-lightbox', get_stylesheet_directory_uri() . '/js/lightbox.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
-    // Spécifique page d'accueil 
-    if (is_front_page()) {
-        wp_enqueue_script('script-ajax_filtres', get_stylesheet_directory_uri() . '/js/ajax_filtres.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
-        wp_enqueue_script('script-ajax_charger_plus', get_stylesheet_directory_uri() . '/js/ajax_charger_plus.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
-    }
-    // Spécifique pages single cpt photo
-    if (is_singular('cpt-photo')) {
-        wp_enqueue_script('script-pagination-photo', get_stylesheet_directory_uri() . '/js/pagination-photo.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
-        wp_enqueue_script('script-ajax_toutes_les_photos', get_stylesheet_directory_uri() . '/js/ajax_toutes_les_photos.js', array( 'jquery' ), 1.1, array( 'strategy'  => 'defer', ));
-    }
 }
 
 // Ajout des fichiers comprennant les parties AJAX /includes/ajax.php

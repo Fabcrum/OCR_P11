@@ -9,8 +9,19 @@ footer {
 
 #footer-menu ul {
     list-style: none;
+    padding-left: 0;
     display: flex;
     justify-content:space-between;
+}
+
+@media all and (max-width:650px) {
+    #footer-menu ul {
+        flex-direction: column;
+        justify-content:space-between;
+    }
+    #footer-menu ul li {
+        text-align: center;
+    }
 }
 
 #footer-menu ul li {

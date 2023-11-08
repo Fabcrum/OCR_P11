@@ -8,7 +8,7 @@
  */
 
 // Récupération des éléments dans le DOM
-const lienContact = document.querySelector(".lien-contact")
+const lienContact = document.querySelectorAll(".lien-contact")
 const modaleContact = document.getElementById("modale-contact")
 const modaleFond = document.getElementById("fond")
 const modaleForm = document.getElementById("form")
@@ -21,8 +21,10 @@ function ouvertureModale() {
 }
 
 // AddEventListener d'ouverture
-lienContact.addEventListener("click", () => { 
-    ouvertureModale()
+lienContact.forEach(function (item) {
+    item.addEventListener("click", () => {
+        ouvertureModale()
+    })
 })
 
 // Fermeture modale

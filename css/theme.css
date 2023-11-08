@@ -76,6 +76,13 @@ h3 {
     font-size: 18px;
     text-transform: uppercase;
 }
+@media all and (max-width:1100px) { h1 { font-size: 90px; } h2 { font-size: 60px; } }
+@media all and (max-width:1000px) { h1 { font-size: 80px; } h2 { font-size: 55px; } }
+@media all and (max-width:850px) { h1 { font-size: 70px; } h2 { font-size: 50px; } }
+@media all and (max-width:750px) { h1 { font-size: 50px; } h2 { font-size: 45px; } }
+@media all and (max-width:550px) { h1 { font-size: 42px; } h2 { font-size: 40px; } }
+@media all and (max-width:450px) { h1 { font-size: 35px; } h2 { font-size: 40px; } }
+@media all and (max-width:375px) { h1 { font-size: 30px; } h2 { font-size: 40px; } }
 
 p { font-size: 14px; }
 
@@ -108,8 +115,8 @@ a { text-decoration: none; }
 }
 
 /* ELEMENTS COMMUNS PAGE SINGLE ET JS */
-#page {
-    max-width: 1148px;
+#content {
+    max-width: 1440px;
     margin: auto;
 }
 
@@ -120,3 +127,5 @@ a { text-decoration: none; }
 .display-none {
     display: none!important;
  }
+
+body { margin:0; }

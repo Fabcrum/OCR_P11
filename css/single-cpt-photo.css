@@ -1,10 +1,21 @@
 /* === SINGLE CPT PHOTO === */
 
-.photo-single {
+.photo-single, .photo-single__footer, .photo-single__apparentees {
     max-width: 1148px;
+    margin: auto;
+}
+
+.photo-single {
     display: flex;
     align-items: end;
     justify-content: space-between;
+    margin-top: 15px;
+}
+
+@media all and (max-width:1200px) {
+    .photo-single, .photo-single__footer, .photo-single__apparentees {
+        padding : 0 2vw;
+    }
 }
 
 .photo-info {
@@ -39,18 +50,22 @@
     padding-bottom: 31px;
 }
 
+.photo-info a {
+    color: black;
+}
+
 .photo-image {
-    width: 50%;
-    height: 100vh;
+    width : auto;
+    height: auto;
+    max-width: calc(1148px / 2);
+    max-height: calc(100vh - (118px + 87px));
     position: relative;
 }
 
 .photo-image img {
-    width: auto;
-    max-height: calc(100vh - 118px);
     max-width: calc(1148px / 2);
+    max-height: calc(100vh - (118px + 87px));
     object-fit: contain;
-    position: absolute;
     bottom: 0;
     right: 0;
 }
@@ -68,8 +83,38 @@
     opacity: 1;
 }
 
+@media all and (max-width:650px) {
+    .photo-single {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding : 0;
+    }
+    .photo-info, .photo-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    .photo-info h2, .photo-info ul  {
+        padding: 0 2vw;
+    }
+    .photo-info h2  {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    .photo-image {
+        text-align: center;
+    }
+    .photo-image img {
+        max-width: 100vw;
+        position: relative;
+        height: auto;
+    }
+    .photo-image .icon-fullscreen {
+        display: none;
+    }
+}
+
 .photo-single__footer {
-    max-width: 1148px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -94,6 +139,31 @@
 .photo-single__footer__cta .btn-base {
     width: 272px;
     height: 50px;
+}
+
+@media all and (max-width:850px) {
+    .photo-single__footer__cta {
+        flex-direction:column;
+        justify-content: center;
+        padding-top:20px;
+    }
+    .photo-single__footer__cta p, .photo-single__footer__cta .btn-base {
+        margin:5px;
+    }
+    .photo-single__footer__cta p {
+        text-align: left;
+    }
+}
+@media all and (max-width:650px) {
+    .photo-single__footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom:20px;
+    }
+    .photo-single__footer__cta {
+        width:100%;
+    }
 }
 
 .photo-single__apparentees p {

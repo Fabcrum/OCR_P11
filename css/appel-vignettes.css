@@ -5,6 +5,23 @@
     grid-gap: 24px 2%;
     grid-auto-columns: 49%;
     grid-template-areas: "a a";
+    max-width: 1148px;
+    margin: auto;
+}
+
+@media all and (max-width: 1200px) {
+    .photo-grille {
+        padding: 0 2vw;
+    }
+}
+
+@media all and (max-width:650px) {
+    .photo-grille {
+        display: grid;
+        grid-gap: 10px;
+        grid-auto-columns: 100%;
+        grid-template-areas: "a";
+    }
 }
 
 #vignette {
@@ -71,6 +88,10 @@
     font-family:var(--secondary-f-family);
     color: white;
     text-transform: uppercase;
+}
+
+@media all and (max-width:850px) and (min-width:650px) {
+    .vignette-titre, .vignette-categorie a { font-size:13px; }
 }
 
 .vignette-titre {

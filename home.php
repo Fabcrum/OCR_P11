@@ -42,14 +42,14 @@ $heroImage = get_stylesheet_directory_uri() . '/assets/hero/' . rand(1,9).'.webp
             <?php $categories = get_terms(array( 'taxonomy' => 'categorie-photos', 'hide_empty' => false ));?>
             <?php $formats = get_terms(array( 'taxonomy' => 'format-photos', 'hide_empty' => false ));?>
 
-            <select id="selectCategories" name="selectCategories">
-                <option value="Concert">Catégories</option>
-                <?php foreach ($categories as $category) : ?>
-                    <option value="<?php echo esc_html($category->name); ?>"><?php echo esc_html($category->name); ?></option>
-                <?php endforeach; ?>
+            <select id="selectCategories" name="selectCategories" class="select2">
+                <option value="Toutes les catégories">Catégories</option>
+                    <?php foreach ($categories as $category) : ?>
+                <option value="<?php echo esc_html($category->name); ?>"><?php echo esc_html($category->name); ?></option>
+                    <?php endforeach; ?>
             </select>
-            <select id="selectFormats" name="selectFormats">
-                <option value="Paysage">Formats</option>
+            <select id="selectFormats" name="selectFormats" class="select2">
+                <option value="Tous les formats">Formats</option>
                 <?php foreach ($formats as $format) : ?>
                     <option value="<?php echo esc_html($format->name); ?>"><?php echo esc_html($format->name); ?></option>
                 <?php endforeach; ?>
@@ -57,7 +57,7 @@ $heroImage = get_stylesheet_directory_uri() . '/assets/hero/' . rand(1,9).'.webp
         </fieldset>
 
         <fieldset class="fieldset-trier-par">       
-            <select id="selectTriDate" name="selectTriDate" >
+            <select id="selectTriDate" name="selectTriDate" class="select2">
                 <option value="ASC">Trier par</option>
                 <option value="ASC">Des plus récentes aux plus anciennes</option>
                 <option value="DESC">Des plus anciennes aux plus récentes</option>
