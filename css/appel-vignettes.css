@@ -105,3 +105,6 @@
     right: 20px;
     Bottom: 10px;
 }
+.vignette-categorie a:nth-child(2) {
+    display:none;
+}

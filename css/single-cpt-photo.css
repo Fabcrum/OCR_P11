@@ -114,6 +114,10 @@
     }
 }
 
+.photo-info ul li a:nth-child(2) {
+    display:none;
+}
+
 .photo-single__footer {
     display: flex;
     align-items: center;

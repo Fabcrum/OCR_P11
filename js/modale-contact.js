@@ -35,13 +35,12 @@ modaleFond.addEventListener("click", () => {
 })
 
 // Chargement code ref.
-if (document.getElementById("bouton-contact") !== null) {
-    let refPhoto = document.querySelector(".ref-photo")
-    const valRefPhoto = refPhoto.innerHTML
-    $(document).ready(function() {
-        $('#bouton-contact').click(function() {
-            ouvertureModale()
-            $('#champ-ref-photo').val(valRefPhoto)
-        })
+
+let refPhoto = document.querySelector(".ref-photo")
+const valRefPhoto = refPhoto.innerHTML
+$(document).ready(function() {
+    $('#bouton-contact').click(function() {
+        ouvertureModale()
+        $('#champ-ref-photo').val(valRefPhoto)
     })
-}
+})
